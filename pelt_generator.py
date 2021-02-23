@@ -8,9 +8,7 @@ class Generator:
         if items <= 1:
             return randint( 0,150 )
 
-        l = [ randint(0,150) for i in range(0,items) ]
-
-        return l
+        return [ randint(0,150) for i in range(0,items) ]
 
     @staticmethod
     def generate_str(items):
@@ -25,10 +23,7 @@ class Generator:
             return str_dict[randint( 1,10 )]
 
 
-        l = [ str_dict[ randint(1,10) ] for i in range(0,items) ]
-
-
-        return l
+        return [ str_dict[ randint(1,10) ] for i in range(0,items) ]
 
     @classmethod
     def generate_mix(cls,items):
@@ -44,30 +39,26 @@ class Generator:
 
         else:
 
-            l = []
+            list = []
 
             for i in range(0,items):
                 mix = randint(0,1)
 
                 if mix:
-                    l.append( cls.generate_int(1) )
+                    list.append( cls.generate_int(1) )
 
                 else:
-                    l.append( cls.generate_str(1) )
+                    list.append( cls.generate_str(1) )
 
-            return l
+            return list
 
 
     @classmethod
     def generate_dict(cls,items):
 
-        d = { cls.generate_mix(1):cls.generate_mix(1) for i in range(0,items) }
-
-        return d
+        return { cls.generate_mix(1):cls.generate_mix(1) for i in range(0,items) }
 
     @classmethod
     def generate_set(cls,items):
 
-        s = set( cls.generate_mix(1) for i in range(0,items) )
-
-        return s
+        return set( cls.generate_mix(items) )
