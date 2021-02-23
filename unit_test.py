@@ -1,12 +1,14 @@
-from pelt import Pelt
+from pelt import Pelt as p
 
 
 def sum(a,b):
     return a + b
 
 
+#p.test(sum(10,20),20)
+
 """
-Pelt.describe([
+p.describe([
     [
         sum(10,20),
         30,
@@ -24,4 +26,11 @@ Pelt.describe([
 ])
 """
 
-Pelt.help()
+#p.is_equal_type(1,2)
+#p.is_equal(1,2)
+#p.is_none(None)
+#p.help()
+#print(p.gt_dict(10))
+print(p.gt_int(10))
+print(p.gt_int())
+print(p.gt_mix())
