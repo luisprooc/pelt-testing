@@ -1,18 +1,12 @@
 from pelt import Pelt
 
-tester = Pelt()
 
 def sum(a,b):
     return a + b
 
 
 """
-
-tester.test( 50-5, 40 )
-
-
-
-tester.describe(
+Pelt.describe([
     [
         sum(10,20),
         30,
@@ -22,8 +16,12 @@ tester.describe(
         sum(20, 50),
         70
     ],
-    text="HOLA"
-)
-
+    [
+        20 - 30,
+        0,
+        "Other Test"
+    ]
+])
 """
-tester.help()
+
+Pelt.help()
