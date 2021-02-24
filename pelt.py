@@ -60,7 +60,7 @@ class Pelt:
         """
         ( 10, 30 ) => Evaluate if the two values are equal  
         """
-        print("\n❕---TEST COMPARISON---❕ \n")
+        print("\n❕---TEST COMPARISON--- ❕ \n")
 
         #If test1 and test2 are same, display this
         if test1 == test2:
@@ -71,6 +71,23 @@ class Pelt:
 
         return
 
+    @staticmethod
+    def not_is_equal(test1,test2):
+
+        """
+        ( 10, 30 ) => Evaluate if the two values not are equal  
+        """
+        print("\n❕---TEST COMPARISON--- ❕ \n")
+
+        #If test1 and test2 not are same, display this
+        if test1 != test2:
+            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇".format( test1, test2 ))
+
+        else: 
+            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥".format( test1, test2 ))
+
+        return
+
 
     @staticmethod
     def is_equal_type(test1,test2):
@@ -78,7 +95,7 @@ class Pelt:
         """
         ( 10, '30' ) => Evaluate if the two values are equal  
         """
-        print("\n❕---TEST TYPE COMPARISON---❕ \n")
+        print("\n❕---TEST TYPE COMPARISON--- ❕ \n")
 
         #If test1 and test2 are same type, display this
         if type(test1) == type(test2):
@@ -91,12 +108,30 @@ class Pelt:
 
 
     @staticmethod
+    def not_is_equal_type(test1,test2):
+
+        """
+        ( 10, '30' ) => Evaluate if the two values not are equal  
+        """
+        print("\n❕---TEST TYPE COMPARISON--- ❕ \n")
+
+        #If test1 and test2 are same type, display this
+        if type(test1) != type(test2):
+            print(Fore.GREEN + "{0} AND {1} NOT ARE THE SAME TYPE 🥇".format( test1, test2 ))
+
+        else: 
+            print(Fore.RED + "{0} AND {1} ARE THE SAME TYPE 💥".format( test1, test2 ))
+
+        return
+
+
+    @staticmethod
     def is_type(value):
 
         """
         ( '20' ) => Evaluate the type of value  
         """
-        print("\n❕---VALUE TYPE---❕ \n")
+        print("\n❕---VALUE TYPE--- ❕ \n")
         
         # Convert value for slicing
         test = str( type(value) )
@@ -163,15 +198,15 @@ class Pelt:
         (None) => Evaluate if your test return None
         """
 
-        print(Fore.LIGHTBLUE_EX + "\n❕---TEST NONE---❕\n")
+        print(Fore.LIGHTBLUE_EX + "\n❕---TEST NONE--- ❕\n")
 
         #If the test in None, return True
         
         if test == None:
-            print(Fore.GREEN + " IS TRUE 🥇")
+            print(Fore.GREEN + " IS NONE 🥇")
             return 
 
-        print(Fore.RED + " IS FALSE 💥")
+        print(Fore.RED + " NOT IS FALSE 💥")
         return
 
 
