@@ -2,6 +2,7 @@
 from time import perf_counter_ns, perf_counter
 from colorama import Fore,init
 from pelt_generator import Generator
+from pelt_snap import Snap
 
 class Pelt:
     
@@ -209,6 +210,32 @@ class Pelt:
         print(Fore.RED + " NOT IS FALSE 💥")
         return
 
+    @staticmethod
+    def snap_take(name):
+
+        """
+        ("name") => Evaluate if your test return None
+        """
+        return Snap.snap_take_memo(name)
+
+    @staticmethod
+    def snap_rm(name):
+
+        """
+        ("name") => Evaluate if your test return None
+        """
+        print(Snap.snap_remove_memo(name))
+        return
+
+    @staticmethod
+    def snap_rm_all():
+
+        """
+        ("name") => Evaluate if your test return None
+        """
+        
+        print(Snap.snap_remove_all_memo())
+        return
 
     @staticmethod
     def help():
