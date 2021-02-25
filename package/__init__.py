@@ -1,8 +1,8 @@
 # Imports
 from time import perf_counter_ns, perf_counter
 from colorama import Fore,init
-from pelt_generator import Generator
-from pelt_snap import Snap
+from .pelt_generator import Generator
+from .pelt_snap import Snap
 
 # Multi inheritance
 class Pelt( Generator,Snap ):
