@@ -4,7 +4,8 @@ from colorama import Fore,init
 from pelt_generator import Generator
 from pelt_snap import Snap
 
-class Pelt:
+# Multi inheritance
+class Pelt( Generator,Snap ):
     
     # Run and clear colors of the console
     init(autoreset=True)
@@ -65,10 +66,10 @@ class Pelt:
 
         #If test1 and test2 are same, display this
         if test1 == test2:
-            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇\n".format( test1, test2 ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥\n".format( test1, test2 ))
 
         return
 
@@ -82,10 +83,10 @@ class Pelt:
 
         #If test1 and test2 not are same, display this
         if test1 != test2:
-            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇\n".format( test1, test2 ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥\n".format( test1, test2 ))
 
         return
 
@@ -100,10 +101,10 @@ class Pelt:
 
         #If test1 and test2 are same type, display this
         if type(test1) == type(test2):
-            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇\n".format( test1, test2 ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥\n".format( test1, test2 ))
 
         return
 
@@ -143,56 +144,6 @@ class Pelt:
         return
 
     @staticmethod
-    def gt_int(items=1):
-
-        """
-        () => Return a random number
-        (5) => Return a list of length specified with random numbers
-        """
-
-        # Call my Generator and return it
-        return Generator.generate_int(items)
-
-    
-    @staticmethod
-    def gt_str(items=1):
-
-        """
-        () => Return a random string
-        (5) => Return a list of length specified with random strings
-        """ 
-
-        return Generator.generate_str(items)
-
-    
-    @staticmethod
-    def gt_mix(items=1):
-
-        """
-        () => Return a number or string random
-        (5) => Return a list of length specified with numbers and strings random
-        """
-
-        return Generator.generate_mix(items)
-
-    @staticmethod
-    def gt_dict(items=1):
-        """
-        () => Return a random dictionary with length 1
-        (5) => Return a random dictionary with length specified
-        """
-
-        return Generator.generate_dict(items)
-
-    @staticmethod
-    def gt_set(items=1):
-        """
-        () => Return a random set with length 1
-        (5) => Return a random set with length specified
-        """
-        return Generator.generate_set(items)
-    
-    @staticmethod
     def is_none(test):
 
         """
@@ -204,37 +155,10 @@ class Pelt:
         #If the test in None, return True
         
         if test == None:
-            print(Fore.GREEN + " IS NONE 🥇")
+            print(Fore.GREEN + " IS NONE 🥇\n")
             return 
 
-        print(Fore.RED + " NOT IS FALSE 💥")
-        return
-
-    @staticmethod
-    def snap_take(name):
-
-        """
-        ("name") => Evaluate if your test return None
-        """
-        return Snap.snap_take_memo(name)
-
-    @staticmethod
-    def snap_rm(name):
-
-        """
-        ("name") => Evaluate if your test return None
-        """
-        print(Snap.snap_remove_memo(name))
-        return
-
-    @staticmethod
-    def snap_rm_all():
-
-        """
-        ("name") => Evaluate if your test return None
-        """
-        
-        print(Snap.snap_remove_all_memo())
+        print(Fore.RED + " NOT IS FALSE 💥\n")
         return
 
     @staticmethod

@@ -1,11 +1,14 @@
 from os import listdir, getcwd, path, mkdir, rmdir, remove
-
+from colorama import init,Fore
 class Snap:
 
+    init(autoreset=True)
+
+    # Private method
     @staticmethod
-    def handler_file():
+    def __handler_file():
         # filter all directories of the current dir
-        created = list( filter( lambda x: x == "Tests", listdir( getcwd() )))
+        created = list( filter( lambda x: x == "Generated", listdir( getcwd() )))
 
         # If dir exist, return True
         if len(created):
@@ -14,54 +17,85 @@ class Snap:
         return False
     
     @classmethod
-    def snap_take_memo(cls,name):
+    def snap_take(cls,name,files):
+
+        """
+        ("data",(( Pelt.gt_int(5), Pelt.gt_str(10) ))) => This function create a file with
+            the data generated, Only works with generators.
+        """
 
         # If dir exist, not create it and open file with it's name
-        if cls.handler_file():
-            open("{0}/Tests/{1}.txt".format( getcwd(),name ), "w")
+        if cls.__handler_file():
+            file = open("{0}/Generated/{1}.txt".format( getcwd(),name ), "w")
+
+            for i in files:
+                writen = "{0}\n".format( str(i) )
+                file.write(writen)
+
+            file.close()
+            print(Fore.GREEN + "File Generated Succesfully ✔")
             return 
 
-        # Create dir 'Tests' in current dir
-        new_path = path.join(getcwd(), "Tests")  
+        # Create dir 'Generated' in current dir
+        new_path = path.join(getcwd(), "Generated")  
         mkdir(new_path)
 
         # Create file with the name assigned
-        open("{0}/Tests/{1}.txt".format( getcwd(),name ), "w")
+        file = open("{0}/Generated/{1}.txt".format( getcwd(),name ), "w")
+        for i in files:
+            writen = "{0}\n".format( str(i) )
+            file.write(writen)
+
+        file.close()
+        print(Fore.GREEN + "File Generated Succesfully ✔")
         return
 
     @classmethod
-    def snap_remove_memo(cls,name):
+    def snap_rm(cls,name):
+
+        """
+        ("data") => This function delete a file generated, require a name file without 
+            extension
+        """
 
         # If dir exist, not create it and open file with it's name
 
         try:
-            if cls.handler_file():
+            if cls.__handler_file():
 
-                # Find file in Tests dir and remove it
-                rm_path = path.join( getcwd() , "Tests\{0}.txt".format( name ))  
+                # Find file in Generated dir and remove it
+                rm_path = path.join( getcwd() , "Generated\{0}.txt".format( name ))  
                 remove(rm_path)
-                return "Test Removed Succesfully ✔"
+
+                print(Fore.GREEN + "File Removed Succesfully ✔")
+                return 
 
         # If the file not exist, return this
         except:
-            return "Test Already Not Exist 💢"
+            print(Fore.RED + "File Already Not Exist 💢")
+            return 
 
 
     @classmethod
-    def snap_remove_all_memo(cls):
+    def snap_rm_all(cls):
+        """
+        () => This function delete all files generated
+        """
 
         # If dir exist, not create it and open file with it's name
-        if cls.handler_file():
-            files = listdir( getcwd() + "\Tests" )
+        if cls.__handler_file():
+            files = listdir( getcwd() + "\Generated" )
 
             # If dir has files, removes it
             if len( files ):
                 for file in files:
-                    remove(path.join(getcwd(), "Tests\{0}".format(file)))
+                    remove(path.join(getcwd(), "Generated\{0}".format(file)))
             
             # Get path and remove dir
-            rm_path = path.join( getcwd() , "Tests")  
+            rm_path = path.join( getcwd() , "Generated")  
             rmdir(rm_path)
-            return "All Tests Removed Succesfully ✅"
+            print(Fore.GREEN + "Generated Removed Succesfully ✔")
+            return 
 
-        return "Tests Already Not Exist 💢"
+        print(Fore.RED + "Generated Already Not Exist 💢")
+        return

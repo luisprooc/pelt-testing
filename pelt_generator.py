@@ -3,7 +3,12 @@ from random import randint
 class Generator:
 
     @staticmethod
-    def generate_int(items):
+    def gt_int( items=1 ):
+
+        """
+        () => Return a random number
+        (5) => Return a list of length specified with random numbers
+        """
 
         #If items is less two, return one random number
         
@@ -15,7 +20,12 @@ class Generator:
         return [ randint(0,300) for i in range(0,items) ]
 
     @staticmethod
-    def generate_str(items):
+    def gt_str( items =1 ):
+
+        """
+        () => Return a random string
+        (5) => Return a list of length specified with random strings
+        """ 
 
         # Dictionary with strings of example
         str_dict = {
@@ -34,17 +44,22 @@ class Generator:
         return [ str_dict[ randint(1, len(str_dict)) ] for i in range(0,items) ]
 
     @classmethod
-    def generate_mix(cls,items):
+    def gt_mix( cls,items=1 ):
+
+        """
+        () => Return a number or string random
+        (5) => Return a list of length specified with numbers and strings random
+        """
 
         if items <= 1:
             mix = randint(0,1)
 
             #When mix if 1, return a number
             if mix:
-                return cls.generate_int(1)
+                return cls.gt_int(1)
 
             else:
-                return cls.generate_str(1)
+                return cls.gt_str(1)
 
         else:
 
@@ -56,22 +71,32 @@ class Generator:
 
                 # If in this turn mix is 1, generate a random number and add it the list
                 if mix:
-                    list.append( cls.generate_int(1) )
+                    list.append( cls.gt_int(1) )
 
                 else:
-                    list.append( cls.generate_str(1) )
+                    list.append( cls.gt_str(1) )
 
             return list
 
 
     @classmethod
-    def generate_dict(cls,items):
+    def gt_dict( cls,items=1 ):
+
+        """
+        () => Return a random dictionary with length 1
+        (5) => Return a random dictionary with length specified
+        """
 
         # Generate a random dictionary with mix key and values
-        return { cls.generate_mix(1):cls.generate_mix(1) for i in range(0,items) }
+        return { cls.gt_mix(1):cls.gt_mix(1) for i in range(0,items) }
 
     @classmethod
-    def generate_set(cls,items):
+    def gt_set( cls,items =1):
+
+        """
+        () => Return a random set with length 1
+        (5) => Return a random set with length specified
+        """
 
         # Generate a random set with mix values
-        return set( cls.generate_mix(items) )
+        return set( cls.gt_mix(items) )
