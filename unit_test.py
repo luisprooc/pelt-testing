@@ -25,13 +25,3 @@ p.describe([
     ]
 ])
 """
-
-#p.is_equal_type(1,2)
-#p.is_equal(1,2)
-#p.is_none(None)
-#p.help()
-#print(p.gt_str(20))
-#print(p.gt_int(10))
-#print(p.gt_int())
-#print(len(p.gt_dict(50)))
-

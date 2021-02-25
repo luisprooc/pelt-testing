@@ -169,7 +169,7 @@ class Pelt( Generator,Snap ):
         """
 
         # ASCII
-        print(Fore.LIGHTGREEN_EX + "             :::::::::  :::::::::: :::    ::::::::::: \n \
+        print(Fore.LIGHTBLUE_EX + "             :::::::::  :::::::::: :::    ::::::::::: \n \
             :+:    :+: :+:        :+:        :+:     \n \
             +:+    +:+ +:+        +:+        +:+     \n \
             +#++:++#+  +#++:++#   +#+        +#+     \n \
@@ -179,8 +179,21 @@ class Pelt( Generator,Snap ):
 
         print("             test     => Print a feedback of this unit test \n \
             describe => Print a feedbacks of the group tests \n \
-            is_equal =>  Eval if the two values are equal \n \
-            is_equal_type => Eval if the two values are equal \n \
-            is_type  => Eval the type of value ")
+            is_equal =>  Print the evaluation of if the two values are equal \n \
+            not_is_equal =>  Print the evaluation of if the two values are not equal \n \
+            is_equal_type => Print the evaluation of if the two values are equal type \n \
+            not_is_equal_type => Print the evaluation of if the two values are not equal type \n \
+            is_type  => Print the type of value \n \
+            is_none  => Print the evaluation of if the value is None \n \
+            gt_int   => Return per default a random integer number \n \
+            gt_str   => Return per default a random string \n \
+            gt_mix   => Return per default a random string or number \n \
+            gt_dict  => Return per default a random dictionary \n \
+            gt_set   => Return per default a random set \n \
+            snap_take => Create a file with data generated, only works with gt functions \n \
+            snap_rm   => Delete the file generated that you specified \n \
+            snap_rm_all => Delete all files generated \n")
         
+        print(Fore.LIGHTBLUE_EX + "            💙 THANKS FOR USE PELT TESTING 💙")
+    
         return 
