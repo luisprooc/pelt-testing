@@ -3,7 +3,18 @@
 Pelt is a library for testing your algorithms and generate 
 various data type for these algorithm of differents ways.
 
-## Usage
+**Contents:**
+
+- Basic Usage
+- Generators
+- Snap
+
+---
+
+## Basic Usage
+
+One of functionalities of Pelt, is evaluate your algorithm with differents types of tests. 
+Among they are evaluate the type of data, the expected value, if two tests are same type, among others.
 
 ### Help
 
@@ -137,7 +148,7 @@ It compare the type and the value of the two tests introduced, something example
 ```
 Pelt.is_equal(10, 10)
 
-Output: ❕---TEST COMPARISON--- ❕
+Output: ❕ ---TEST COMPARISON--- ❕
 
         10 AND 10 ARE EQUAL 🥇
         10 :: <class 'int'>
@@ -145,7 +156,7 @@ Output: ❕---TEST COMPARISON--- ❕
 
 Pelt.is_equal("Javascript","Java")
 
-Ouput:  ❕---TEST COMPARISON--- ❕
+Ouput:  ❕ ---TEST COMPARISON--- ❕
 
         Javascript AND Java NOT ARE EQUAL 💥
         Javascript :: <class 'str'>
@@ -153,7 +164,7 @@ Ouput:  ❕---TEST COMPARISON--- ❕
 
 Pelt.is_equal(10,"10")
 
-Output: ❕---TEST COMPARISON--- ❕
+Output: ❕ ---TEST COMPARISON--- ❕
 
         10 AND 10 NOT ARE EQUAL 💥
         10 :: <class 'int'>
@@ -161,7 +172,7 @@ Output: ❕---TEST COMPARISON--- ❕
 
 Pelt.is_equal( [10,20,30],[10,20,"30"] )
 
-Output: ❕---TEST COMPARISON--- ❕
+Output: ❕ ---TEST COMPARISON--- ❕
 
         [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 💥
         [10, 20, 30] :: <class 'list'>
@@ -178,7 +189,7 @@ Contrary to is equal, this function evaluates if the two tests are not of the sa
 ```
 Pelt.not_is_equal([10,20,30],[10,20,"30"])
 
-Ouput:  ❕---TEST COMPARISON--- ❕
+Ouput:  ❗ ---TEST COMPARISON--- ❗
 
         [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 🥇
         [10, 20, 30] :: <class 'list'>
@@ -186,7 +197,7 @@ Ouput:  ❕---TEST COMPARISON--- ❕
 
 Pelt.not_is_equal(10,10)
 
-Ouput:  ❕---TEST COMPARISON--- ❕
+Ouput:  ❗ ---TEST COMPARISON--- ❗
 
         10 AND 10 ARE EQUAL 💥
         10 :: <class 'int'>
@@ -204,7 +215,7 @@ something examples below.
 ```
 Pelt.is_equal_type(10,5)
 
-Output: ❕---TEST TYPE COMPARISON--- ❕
+Output: ❕ ---TEST TYPE COMPARISON--- ❕
 
         10 AND 5 ARE THE SAME TYPE 🥇
         10 :: <class 'int'>
@@ -212,7 +223,7 @@ Output: ❕---TEST TYPE COMPARISON--- ❕
 
 Pelt.is_equal_type("10",10)
 
-Output: ❕---TEST TYPE COMPARISON--- ❕
+Output: ❕ ---TEST TYPE COMPARISON--- ❕
 
         10 AND 10 NOT ARE THE SAME TYPE 💥
         10 :: <class 'str'>
@@ -220,9 +231,86 @@ Output: ❕---TEST TYPE COMPARISON--- ❕
 
 Pelt.is_equal_type("JS","Javascript")
 
-Output: ❕---TEST TYPE COMPARISON--- ❕
+Output: ❕ ---TEST TYPE COMPARISON--- ❕
 
         JS AND Javascript ARE THE SAME TYPE 🥇
         JS :: <class 'str'>
         Javascript :: <class 'str'>
 ```
+
+
+### Not_is_equal_type
+
+Contrary to is equal type, this function evaluates if the two tests are not of the same type, 
+the data value not is important.
+
+*Params: not_is_equal_type( test1, test2 )*
+
+```
+Pelt.not_is_equal_type(10, 10)
+
+Output: ❗ ---TEST TYPE COMPARISON--- ❗
+
+        10 AND 10 ARE THE SAME TYPE 💥
+        10 :: <class 'int'>
+        10 :: <class 'int'>
+
+Pelt.not_is_equal_type((1,4,5), [10,"GO"])
+
+Output: ❗ ---TEST TYPE COMPARISON--- ❗
+
+        (1, 4, 5) AND [10, 'GO'] NOT ARE THE SAME TYPE 🥇
+        (1, 4, 5) :: <class 'tuple'>
+        [10, 'GO'] :: <class 'list'>
+```
+
+
+### Is_type
+
+It evaluate the type of value of your data or your test.
+
+*Params: is_type( value )*
+
+```
+Pelt.is_type( (1,4,5) ) 
+
+Output: ❕---VALUE TYPE--- ❕
+
+        (1, 4, 5) ⇔ 'tuple'
+
+Pelt.is_type( sum(10,20) )
+
+Output: ❕---VALUE TYPE--- ❕
+
+        30 ⇔ 'int'
+
+Pelt.is_type( {"5",4,5} )
+
+Output: ❕---VALUE TYPE--- ❕ 
+
+        {'5', 4, 5} ⇔ 'set'
+```
+
+
+### Is_none
+
+It evaluate if your test is none or not.
+
+*Params: is_none( test )*
+
+```
+Pelt.is_none( sum(10,20) )
+
+Output: ❕---TEST NONE--- ❕
+
+        NOT IS NONE 💥
+
+Pelt.is_none( None )
+
+Output: ❕---TEST NONE--- ❕
+
+        IS NONE 🥇
+```
+
+
+## Generators
