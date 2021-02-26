@@ -1,3 +1,9 @@
 from package import Pelt
 
-Pelt.test(2*10, 20,"Multiplication")
+def sum(a,b):
+    return a + b
+
+Pelt.describe([
+    [ sum(5,5),10 ],
+    [ sum(13,12),25, "SUM OF NUMBERS" ]
+])
