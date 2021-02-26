@@ -126,3 +126,57 @@ Ouput: 🔍 TESTS GROUP 🔎
         Ouput: 25 🥇
         ➖➖➖➖➖➖➖➖
 ```
+
+
+### Is_equal
+
+It compare the type and the value of the two tests introduced, something examples below.
+
+*Params: is_equal( test1, test2 )*
+
+```
+Pelt.is_equal(10, 10)
+
+Output: ❕ ---TEST COMPARISON--- ❕
+
+        10 AND 10 ARE EQUAL 🥇
+
+Pelt.is_equal("Javascript","Java")
+
+Ouput:  ❕---TEST COMPARISON--- ❕ 
+
+        Javascript AND Java NOT ARE EQUAL 💥
+
+Pelt.is_equal(10,"10")
+
+Output: ❕---TEST COMPARISON--- ❕
+
+        10 AND 10 NOT ARE EQUAL 💥
+
+Pelt.is_equal( [10,20,30],[10,20,"30"] )
+
+Output: ❕---TEST COMPARISON--- ❕
+
+        [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 💥
+```
+
+
+### Not_is_equal
+
+Contrary to is equal, this function evaluates if the two tests are not of the same type and value.
+
+*Params: not_is_equal( test1, test2 )*
+
+```
+Pelt.not_is_equal([10,20,30],[10,20,"30"])
+
+Ouput:  ❕---TEST COMPARISON--- ❕
+
+        [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 🥇
+
+Pelt.not_is_equal(10,10)
+
+Ouput:  ❕---TEST COMPARISON--- ❕
+
+        10 AND 10 ARE EQUAL 💥
+```
