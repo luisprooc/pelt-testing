@@ -66,10 +66,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 are same, display this
         if test1 == test2:
-            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -83,10 +83,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 not are same, display this
         if test1 != test2:
-            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -101,10 +101,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 are same type, display this
         if type(test1) == type(test2):
-            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -119,10 +119,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 are same type, display this
         if type(test1) != type(test2):
-            print(Fore.GREEN + "{0} AND {1} NOT ARE THE SAME TYPE 🥇".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} NOT ARE THE SAME TYPE 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} ARE THE SAME TYPE 💥".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} ARE THE SAME TYPE 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 

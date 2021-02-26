@@ -137,27 +137,35 @@ It compare the type and the value of the two tests introduced, something example
 ```
 Pelt.is_equal(10, 10)
 
-Output: ❕ ---TEST COMPARISON--- ❕
+Output: ❕---TEST COMPARISON--- ❕
 
         10 AND 10 ARE EQUAL 🥇
+        10 :: <class 'int'>
+        10 :: <class 'int'>
 
 Pelt.is_equal("Javascript","Java")
 
-Ouput:  ❕---TEST COMPARISON--- ❕ 
+Ouput:  ❕---TEST COMPARISON--- ❕
 
         Javascript AND Java NOT ARE EQUAL 💥
+        Javascript :: <class 'str'>
+        Java :: <class 'str'>
 
 Pelt.is_equal(10,"10")
 
 Output: ❕---TEST COMPARISON--- ❕
 
         10 AND 10 NOT ARE EQUAL 💥
+        10 :: <class 'int'>
+        10 :: <class 'str'>
 
 Pelt.is_equal( [10,20,30],[10,20,"30"] )
 
 Output: ❕---TEST COMPARISON--- ❕
 
         [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 💥
+        [10, 20, 30] :: <class 'list'>
+        [10, 20, '30'] :: <class 'list'>
 ```
 
 
@@ -173,10 +181,48 @@ Pelt.not_is_equal([10,20,30],[10,20,"30"])
 Ouput:  ❕---TEST COMPARISON--- ❕
 
         [10, 20, 30] AND [10, 20, '30'] NOT ARE EQUAL 🥇
+        [10, 20, 30] :: <class 'list'>
+        [10, 20, '30'] :: <class 'list'>
 
 Pelt.not_is_equal(10,10)
 
 Ouput:  ❕---TEST COMPARISON--- ❕
 
         10 AND 10 ARE EQUAL 💥
+        10 :: <class 'int'>
+        10 :: <class 'int'>
+```
+
+
+### Is_equal_type
+
+It compare only the data type between the two tests introduced, In this case the value of data not is important,
+something examples below.
+
+*Params: is_equal_type( test1, test2 )*
+
+```
+Pelt.is_equal_type(10,5)
+
+Output: ❕---TEST TYPE COMPARISON--- ❕
+
+        10 AND 5 ARE THE SAME TYPE 🥇
+        10 :: <class 'int'>
+        5 :: <class 'int'>
+
+Pelt.is_equal_type("10",10)
+
+Output: ❕---TEST TYPE COMPARISON--- ❕
+
+        10 AND 10 NOT ARE THE SAME TYPE 💥
+        10 :: <class 'str'>
+        10 :: <class 'int'>
+
+Pelt.is_equal_type("JS","Javascript")
+
+Output: ❕---TEST TYPE COMPARISON--- ❕
+
+        JS AND Javascript ARE THE SAME TYPE 🥇
+        JS :: <class 'str'>
+        Javascript :: <class 'str'>
 ```
