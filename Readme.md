@@ -5,9 +5,9 @@ various data type for these algorithm of differents ways.
 
 **Contents:**
 
-- Basic Usage
-- Generators
-- Snap
+- ### Basic Usage
+- ### Generators
+- ### Snap
 
 ---
 
@@ -314,3 +314,86 @@ Output: ❕---TEST NONE--- ❕
 
 
 ## Generators
+
+Pelt also offers various types of test data generators for you to test your 
+algorithms and evaluate the result with the data that can be found in Pelt. 
+This will prevent you from generating data manually and repetitively. 
+
+
+### Gt_int
+
+This method generates a random number between 0 and 300, this method can take 
+a number as a parameter. If you pass a number as a parameter, this method will 
+return you an array of numbers with the length of the parameter you added. 
+
+*Params: gt_int( number ), per default it is 1*
+
+```
+> print( Pelt.gt_int() )
+
+Output: 254
+
+> print( Pelt.gt_int(5) )
+
+Output: [162, 13, 16, 15, 106]
+
+> number_list = Pelt.gt_int(10)
+
+Output: [242, 275, 211, 105, 58, 40, 201, 281, 28, 38]
+```
+
+_Now we are going to use it in our software:_
+
+```
+def sum(a,b):
+    return a + b, ( a,b ) 
+
+print( sum( Pelt.gt_int(),Pelt.gt_int() ))
+
+Output: (78, (61, 17)) => result: 78, a: 61, b: 17
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+def div(a,b):
+    return a / b, ( a,b ) 
+
+print( div( Pelt.gt_int(),Pelt.gt_int() ))
+
+Output: (2.456896551724138, (285, 116)) => result: 2.456896551724138, a: 285, b: 116
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+def duplicate_list(list):
+
+    duplicate = []
+    for i in list:
+        duplicate.append( i * 2)
+
+    return duplicate, list
+
+print( duplicate_list( Pelt.gt_int(5) ))
+
+Output: ([416, 226, 362, 296, 512], [208, 113, 181, 148, 256])
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+>> More Advance 
+
+def duplicate_list(list):
+    
+    duplicate = [ i * 2 for i in list]
+
+    return duplicate, list
+
+print( duplicate_list( Pelt.gt_int(12) ))
+
+Output: ([396, 154, 354, 530, 224, 480, 192, 196, 180, 452, 120, 24], [198, 77, 177, 265, 112, 240, 96, 98, 90, 226, 60, 12])
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+number_list = Pelt.gt_int(4)
+
+print( list( map( lambda x: x * 2, number_list )), number_list )
+
+Output: [330, 142, 180, 564] [165, 71, 90, 282]
+```

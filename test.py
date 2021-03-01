@@ -1,6 +1,5 @@
 from package import Pelt
 
-def sum(a,b):
-    return a + b
+number_list = Pelt.gt_int(4)
 
-Pelt.is_none( None )
+print( list( map( lambda x: x * 2, number_list )), number_list )
