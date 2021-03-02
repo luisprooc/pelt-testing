@@ -518,3 +518,97 @@ multy_dict = {
 Output: {22: {296: 'dolor', 'qwertyuytr': 298, 75: 'standard', 'words': 'p'}, 
         'Ors': ['PowerUp', 'Finibus', 'injected', 'fugiat', 'therefore']}
 ```
+
+
+### Gt_set
+
+This generator return a random set, it has a similar behavior that the others,
+some examples below:
+
+*Params: gt_set( number ), per default it is 1*
+
+```
+> print( Pelt.gt_set(5) )
+
+Output: {136, 200, 'Cors-c', 277, 120}
+
+def joiner(value):
+
+    example = {"example",1,2}
+    return value.union(example) 
+
+print( joiner(Pelt.gt_set(4)) )
+
+Output: {1, 2, 'ghorlayck', 'example', 201, 283, 'injected'}
+```
+
+
+## Snap
+
+After learning the functionality of the generators, surely you would have liked that 
+said test data could have it in a separate flow to test and to better predict the result of your algorithms.
+Now we are going to unleash all the power that Pelt can offer, with the snap functions we can archive test data 
+and test it later with a much more predictable result, allowing you to use the tests in a more efficient way.
+
+**NOTE: SNAPS ONLY RECEIVE A GENERATORS**
+
+### Span_take
+
+This function creates a file with the generated data that you passed to the function, you must pass it the 
+name you want for your file, if you passed it the name of an existing file it will overwrite the data.
+
+*Params: Pelt.snap_take( "file name", ( Generators, Generators, ... ) ) => Require a matrix*
+
+```
+Pelt.snap_take("Data", (
+    Pelt.gt_int(5), Pelt.gt_str(4)
+))
+```
+
+
+![Pelt Snap_take](screenshots/snaps.PNG)
+
+
+```
+def duplicate(numbers):
+    return list(map( lambda x: x *2, numbers))
+
+
+data = Pelt.gt_int(5)
+
+Pelt.snap_take("Data",(
+    duplicate(data), data
+))
+```
+
+
+![Pelt Snap_take](screenshots/take.PNG)
+
+
+### Span_rm
+
+This function creates a file with the generated data that you passed to the function, you must pass it the 
+name you want for your file, if you passed it the name of an existing file it will overwrite the data.
+
+*Params: Pelt.snap_rm( "file name" )*
+
+```
+Pelt.snap_rm("Data")
+```
+
+It removes a file generate with these name.
+
+
+### Span_rm_all
+
+This function remove all files generated with snap.
+
+*Params: Pelt.snap_rm_all()*
+
+```
+Pelt.snap_rm_all()
+```
+
+===
+
+# TANKS FOR USE PELT TESTING 💙, Do I deserve a star?
