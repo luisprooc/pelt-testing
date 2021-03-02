@@ -552,7 +552,7 @@ and test it later with a much more predictable result, allowing you to use the t
 
 **NOTE: SNAPS ONLY RECEIVE A GENERATORS**
 
-### Span_take
+### Snap_take
 
 This function creates a file with the generated data that you passed to the function, you must pass it the 
 name you want for your file, if you passed it the name of an existing file it will overwrite the data.
@@ -585,7 +585,7 @@ Pelt.snap_take("Data",(
 ![Pelt Snap_take](screenshots/take.PNG)
 
 
-### Span_rm
+### Snap_rm
 
 This function creates a file with the generated data that you passed to the function, you must pass it the 
 name you want for your file, if you passed it the name of an existing file it will overwrite the data.
@@ -599,7 +599,7 @@ Pelt.snap_rm("Data")
 It removes a file generate with these name.
 
 
-### Span_rm_all
+### Snap_rm_all
 
 This function remove all files generated with snap.
 
