@@ -5,13 +5,13 @@ various data type for these algorithm of differents ways.
 
 **Contents:**
 
-- Basic Usage {#Basic Usage}
-- Generators {#Generators}
-- Snap {#Snap}
+- [Basics](#Basics)
+- [Generators](#Generators)
+- [Snap](#Snap)
 
 ---
 
-## Basic Usage
+## Basics
 
 One of functionalities of Pelt, is evaluate your algorithm with differents types of tests. 
 Among they are evaluate the type of data, the expected value, if two tests are same type, among others.
@@ -482,4 +482,39 @@ Output: ❕---TEST TYPE COMPARISON--- ❕
         PowerUp AND 169 NOT ARE THE SAME TYPE 💥
         PowerUp :: <class 'str'>
         169 :: <class 'int'>
+```
+
+
+### Gt_dict
+
+This generator return a random dictionary with random keys and values, 
+per deafult not return nested dictionaries, but you can custom the dictionarys
+combining the others generators.
+
+*Params: gt_dict( number ), per default it is 1*
+
+```
+> print( Pelt.gt_dict() )
+
+Output: {'looks': 155}
+
+# You can also create a custom dictionary, depending on your need.
+
+multy_dict = {
+    Pelt.gt_str(): Pelt.gt_mix(5)
+}
+
+> print(multy_dict)
+
+Output: {'looks': ['words', 5, 115, 102, 'PowerUp']}
+
+multy_dict = {
+    Pelt.gt_int(): Pelt.gt_dict(4), 
+    Pelt.gt_str(): Pelt.gt_str(5)
+}
+
+> print(multy_dict)
+
+Output: {22: {296: 'dolor', 'qwertyuytr': 298, 75: 'standard', 'words': 'p'}, 
+        'Ors': ['PowerUp', 'Finibus', 'injected', 'fugiat', 'therefore']}
 ```
