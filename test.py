@@ -1,5 +1,8 @@
 from package import Pelt
 
-number_list = Pelt.gt_int(4)
 
-print( list( map( lambda x: x * 2, number_list )), number_list )
+def equal_values(value1,value2):
+
+    return Pelt.is_equal_type(value1,value2)
+
+equal_values( Pelt.gt_mix(),Pelt.gt_mix() )

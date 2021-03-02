@@ -5,9 +5,9 @@ various data type for these algorithm of differents ways.
 
 **Contents:**
 
-- ### Basic Usage
-- ### Generators
-- ### Snap
+- Basic Usage {#Basic Usage}
+- Generators {#Generators}
+- Snap {#Snap}
 
 ---
 
@@ -313,7 +313,7 @@ Output: ❕---TEST NONE--- ❕
 ```
 
 
-## Generators
+## Generators 
 
 Pelt also offers various types of test data generators for you to test your 
 algorithms and evaluate the result with the data that can be found in Pelt. 
@@ -396,4 +396,90 @@ number_list = Pelt.gt_int(4)
 print( list( map( lambda x: x * 2, number_list )), number_list )
 
 Output: [330, 142, 180, 564] [165, 71, 90, 282]
+```
+
+
+### Gt_str
+
+It has a similar behavior to gt_int, basically its difference
+It is that this function generates a string randomly and gt_int an integer.
+
+*Params: gt_str( number ), per default it is 1*
+
+```
+> print( Pelt.gt_str() )
+
+Output: injected
+
+> print( Pelt.gt_str(4) )
+
+Output: ['Lorem', 'qwertyuytr', 'p', 'occaecat']
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+def inject_py(string):
+
+    return "{}py ".format( string ) 
+
+print( inject_py(Pelt.gt_str()) )
+
+Output: nullapy 
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+def duplicate_string(string):
+
+    return list( map(lambda x: x * 2,string) ) 
+
+print( duplicate_string(Pelt.gt_str(4)) )
+
+Output: ['IpsumIpsum', 'consecteturconsectetur', 'fugiatfugiat', 'injectedinjected']
+```
+
+
+### Gt_mix
+
+As its name implies, mix returns a number or a string randomly. If you pass a number as a parameter, 
+it can return an list with numbers and strings.
+
+*Params: gt_mix( number ), per default it is 1*
+
+```
+> print( Pelt.gt_mix() )
+
+Output: 248
+
+> print( Pelt.gt_mix(5) )
+
+Output: ['since', 'standard', 267, 285, 'Excepteur']
+```
+
+Remember, you can combine generators with tests:
+
+```
+# As the tests have return a print built in, it is not necessary to put them in your function
+
+def type_data(data):
+
+    return Pelt.is_type(data)
+
+type_data( Pelt.gt_mix() )
+
+Output: ❕---VALUE TYPE--- ❕
+
+        Latin ⇔ 'str'
+
+〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
+
+def equal_values(value1,value2):
+
+    return Pelt.is_equal_type(value1,value2)
+
+equal_values( Pelt.gt_mix(),Pelt.gt_mix() )
+
+Output: ❕---TEST TYPE COMPARISON--- ❕
+
+        PowerUp AND 169 NOT ARE THE SAME TYPE 💥
+        PowerUp :: <class 'str'>
+        169 :: <class 'int'>
 ```
