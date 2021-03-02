@@ -66,10 +66,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 are same, display this
         if test1 == test2:
-            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE EQUAL 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE EQUAL 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -79,14 +79,14 @@ class Pelt( Generator,Snap ):
         """
         ( 10, 30 ) => Evaluate if the two values not are equal  
         """
-        print("\n❕---TEST COMPARISON--- ❕ \n")
+        print("\n❗---TEST COMPARISON--- ❗ \n")
 
         #If test1 and test2 not are same, display this
         if test1 != test2:
-            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} NOT ARE EQUAL 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} ARE EQUAL 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -101,10 +101,10 @@ class Pelt( Generator,Snap ):
 
         #If test1 and test2 are same type, display this
         if type(test1) == type(test2):
-            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇\n".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} ARE THE SAME TYPE 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥\n".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} NOT ARE THE SAME TYPE 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -115,14 +115,14 @@ class Pelt( Generator,Snap ):
         """
         ( 10, '30' ) => Evaluate if the two values not are equal  
         """
-        print("\n❕---TEST TYPE COMPARISON--- ❕ \n")
+        print("\n❗---TEST TYPE COMPARISON--- ❗ \n")
 
         #If test1 and test2 are same type, display this
         if type(test1) != type(test2):
-            print(Fore.GREEN + "{0} AND {1} NOT ARE THE SAME TYPE 🥇".format( test1, test2 ))
+            print(Fore.GREEN + "{0} AND {1} NOT ARE THE SAME TYPE 🥇\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         else: 
-            print(Fore.RED + "{0} AND {1} ARE THE SAME TYPE 💥".format( test1, test2 ))
+            print(Fore.RED + "{0} AND {1} ARE THE SAME TYPE 💥\n{0} :: {2} \n{1} :: {3}".format( test1, test2, type(test1), type(test2) ))
 
         return
 
@@ -158,7 +158,7 @@ class Pelt( Generator,Snap ):
             print(Fore.GREEN + " IS NONE 🥇\n")
             return 
 
-        print(Fore.RED + " NOT IS FALSE 💥\n")
+        print(Fore.RED + " NOT IS NONE 💥\n")
         return
 
     @staticmethod
