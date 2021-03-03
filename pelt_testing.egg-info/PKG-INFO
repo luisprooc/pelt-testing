@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: pelt-testing
-Version: 0.0.1
-Summary: Este paquete nos permite testear algoritmos y generar datos de prueba para lo anteriormente dicho
+Version: 1.0
+Summary: This package allows us to test algorithms and generate test data
 Home-page: https://github.com/luisprooc/pelt-testing
 Author: Luis Rosario
 Author-email: luisprooc@gmail.com
@@ -11,6 +11,8 @@ Description: # PELT TESTING
         
         Pelt is a library for testing your algorithms and generate 
         various data type for these algorithm of differents ways.
+        
+        _Basic importation: from pelt import Pelt_
         
         **Contents:**
         

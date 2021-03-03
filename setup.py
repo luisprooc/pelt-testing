@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pelt-testing",
-    version="0.0.1",
+    version="1.0",
     author="Luis Rosario",
     author_email="luisprooc@gmail.com",
     description="This package allows us to test algorithms and generate test data",

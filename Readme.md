@@ -3,6 +3,8 @@
 Pelt is a library for testing your algorithms and generate 
 various data type for these algorithm of differents ways.
 
+_Basic importation: from pelt import Pelt_
+
 **Contents:**
 
 - [Basics](#Basics)
