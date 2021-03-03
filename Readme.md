@@ -5,11 +5,11 @@ various data type for these algorithm of differents ways.
 
 INSTALLATION AND IMPORTATION:
 
-`
+```
 pip install pelt-testing
 
 from pelt import Pelt
-`
+```
 
 **Contents:**
 
