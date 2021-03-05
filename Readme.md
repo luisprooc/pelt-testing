@@ -5,7 +5,7 @@ various data type for these algorithm of differents ways.
 
 INSTALLATION AND IMPORTATION:
 
-```
+```console
 pip install pelt-testing
 
 from pelt import Pelt
@@ -30,9 +30,9 @@ This function provides a summary of all the methods that Pelt has.
 
 *Example:*
 
-`
+```python
 Pelt.help()
-`
+```
 
 *Output:*
 
@@ -47,7 +47,7 @@ in Pelt.
 
 *Params: test( function, expected value, optional text)*
 
-```
+```python
 Pelt.test(10 + 5, 15)
 
 Output: UNIT TEST [🕙 66275899.9337248]
@@ -73,7 +73,7 @@ Output: UNIT TEST [🕙 66275899.9337248]
 Per default, test() add a example text for your unit test, but also you can 
 add a own text.
 
-```
+```python
 Pelt.test(mult( 2,10 ), 20,"Multiplication")
 
 Output: MULTIPLICATION  [🕙 66275899.9337248]
@@ -90,7 +90,7 @@ Per default it add a example test, but also you can add a own text.
 
 *Params: describe( matrix, optional text)*
 
-```
+```python
 Pelt.describe((
     ( sum(10,20),30 ),
     ( sum(20,20),40, "SUM OF NUMBERS" ),
@@ -123,7 +123,7 @@ Ouput: 🔍 SUMS 🔎
 
 Without own text and with matrix:
 
-```
+```python
 Pelt.describe([
     [ sum(5,5),10 ],
     [ sum(13,12),25, "SUM OF NUMBERS" ]
@@ -153,7 +153,7 @@ It compare the type and the value of the two tests introduced, something example
 
 *Params: is_equal( test1, test2 )*
 
-```
+```python
 Pelt.is_equal(10, 10)
 
 Output: ❕ ---TEST COMPARISON--- ❕
@@ -194,7 +194,7 @@ Contrary to is equal, this function evaluates if the two tests are not of the sa
 
 *Params: not_is_equal( test1, test2 )*
 
-```
+```python
 Pelt.not_is_equal([10,20,30],[10,20,"30"])
 
 Ouput:  ❗ ---TEST COMPARISON--- ❗
@@ -220,7 +220,7 @@ something examples below.
 
 *Params: is_equal_type( test1, test2 )*
 
-```
+```python
 Pelt.is_equal_type(10,5)
 
 Output: ❕ ---TEST TYPE COMPARISON--- ❕
@@ -254,7 +254,7 @@ the data value not is important.
 
 *Params: not_is_equal_type( test1, test2 )*
 
-```
+```python
 Pelt.not_is_equal_type(10, 10)
 
 Output: ❗ ---TEST TYPE COMPARISON--- ❗
@@ -279,7 +279,7 @@ It evaluate the type of value of your data or your test.
 
 *Params: is_type( value )*
 
-```
+```python
 Pelt.is_type( (1,4,5) ) 
 
 Output: ❕---VALUE TYPE--- ❕
@@ -306,7 +306,7 @@ It evaluate if your test is none or not.
 
 *Params: is_none( test )*
 
-```
+```python
 Pelt.is_none( sum(10,20) )
 
 Output: ❕---TEST NONE--- ❕
@@ -336,7 +336,7 @@ return you an array of numbers with the length of the parameter you added.
 
 *Params: gt_int( number ), per default it is 1*
 
-```
+```python
 > print( Pelt.gt_int() )
 
 Output: 254
@@ -352,7 +352,7 @@ Output: [242, 275, 211, 105, 58, 40, 201, 281, 28, 38]
 
 _Now we are going to use it in our software:_
 
-```
+```python
 def sum(a,b):
     return a + b, ( a,b ) 
 
@@ -414,7 +414,7 @@ It is that this function generates a string randomly and gt_int an integer.
 
 *Params: gt_str( number ), per default it is 1*
 
-```
+```python
 > print( Pelt.gt_str() )
 
 Output: injected
@@ -452,7 +452,7 @@ it can return an list with numbers and strings.
 
 *Params: gt_mix( number ), per default it is 1*
 
-```
+```python
 > print( Pelt.gt_mix() )
 
 Output: 248
@@ -464,7 +464,7 @@ Output: ['since', 'standard', 267, 285, 'Excepteur']
 
 Remember, you can combine generators with tests:
 
-```
+```python
 # As the tests have return a print built in, it is not necessary to put them in your function
 
 def type_data(data):
@@ -501,7 +501,7 @@ combining the others generators.
 
 *Params: gt_dict( number ), per default it is 1*
 
-```
+```python
 > print( Pelt.gt_dict() )
 
 Output: {'looks': 155}
@@ -535,7 +535,7 @@ some examples below:
 
 *Params: gt_set( number ), per default it is 1*
 
-```
+```python
 > print( Pelt.gt_set(5) )
 
 Output: {136, 200, 'Cors-c', 277, 120}
@@ -567,7 +567,7 @@ name you want for your file, if you passed it the name of an existing file it wi
 
 *Params: Pelt.snap_take( "file name", ( Generators, Generators, ... ) ) => Require a matrix*
 
-```
+```python
 Pelt.snap_take("Data", (
     Pelt.gt_int(5), Pelt.gt_str(4)
 ))
@@ -577,7 +577,7 @@ Pelt.snap_take("Data", (
 ![Pelt Snap_take](screenshots/snaps.PNG)
 
 
-```
+```python
 def duplicate(numbers):
     return list(map( lambda x: x *2, numbers))
 
@@ -600,7 +600,7 @@ name you want for your file, if you passed it the name of an existing file it wi
 
 *Params: Pelt.snap_rm( "file name" )*
 
-```
+```python
 Pelt.snap_rm("Data")
 ```
 
@@ -613,10 +613,7 @@ This function remove all files generated with snap.
 
 *Params: Pelt.snap_rm_all()*
 
-```
+```python
 Pelt.snap_rm_all()
 ```
 
-===
-
-# TANKS FOR USE PELT TESTING 💙, Do I deserve a star?
