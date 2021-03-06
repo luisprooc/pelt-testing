@@ -34,7 +34,11 @@ class Generator:
             11:"generator", 12:"combined", 13:"looks", 14:"reasonable", 15:"therefore",
             16:"injected", 17:"words", 18:"standard",19:"since", 20:"Finibus",
             21:"Latin", 22:"Hals", 23:"qwertyuytr", 24:"jurlisrr", 25:"ghorlayck",
-            26:"Ors", 27:"Cors-c", 28:"PowerUp", 29:"p", 30:"Ha"
+            26:"Ors", 27:"Cors-c", 28:"PowerUp", 29:"p", 30:"Ha",
+            31:"GO", 32:"Golang", 33:"PY", 34:"Python", 35:"Java",
+            36:"JS", 37:"Javascript", 38:"Rust", 39:"RS", 40:"Clojure",
+            41:"Perl", 42:"HTML", 43:"CSS", 44:"TS", 45:"Typescript",
+            46:"C++", 47:"C", 48:"C#", 49:"Pascal", 50:"Arduino"
         }
         
         if items <= 1:
